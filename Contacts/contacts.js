@@ -20,7 +20,7 @@ const getContactById = async (id) => {
 
 const removeContact = async (id) => {
   const contacts = await listContacts();
-  const idx = contacts.find((item) => item.id === id);
+  const idx = contacts.findIndex((item) => item.id === id);
   if (idx === -1) {
     return null;
   }
@@ -31,15 +31,10 @@ const removeContact = async (id) => {
 
 const addContact = async (name, email, phone) => {
   const contacts = await listContacts();
-  const newContact = {
-    name,
-    email,
-    phone,
-    id: ObjectID(),
-  };
+  const newContact = {name, email, phone, id: ObjectID()};
   contacts.push(newContact);
 
-  await fs.writeFile(contactsPath, JSON.stringify());
+  await fs.writeFile(contactsPath, JSON.stringify(contacts));
   return newContact;
 };
 

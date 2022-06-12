@@ -28,6 +28,6 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
 
 //invokeAction({action: 'list'});
 let id;
-invokeAction({action: 'get', id:"6"});
-//invokeAction({action: 'remove', id:"3"})
+//invokeAction({action: 'get', id:"6"});
+invokeAction({action: 'remove', id:"62a651585cf6ba061cfa0ca0"})
 //invokeAction({action: "add", name: "Lesyk Andriy", email: "nec@gmail.com", phone: "(063) 398-7993" });
